@@ -97,11 +97,11 @@ def validate_one_epoch(model: nn.Module, dataloader: DataLoader) -> float:
 
         wandb.log(
             {
-                "train/loss": epoch_loss,
-                "train/accuracy": accuracy,
-                "train/precision": precision,
-                "train/recall": recall,
-                "train/auroc": auroc,
+                "valid/loss": epoch_loss,
+                "valid/accuracy": accuracy,
+                "valid/precision": precision,
+                "valid/recall": recall,
+                "valid/auroc": auroc,
             },
             step=step,
         )
