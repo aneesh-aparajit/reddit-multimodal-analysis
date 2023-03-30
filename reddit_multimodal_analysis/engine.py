@@ -22,10 +22,10 @@ def train_one_epoch(
     running_loss = 0
 
     criterion = nn.CrossEntropyLoss()
-    accuracy_metric = Accuracy(task="multiclass", num_classes=3)
-    precision_metric = Precision(task="multiclass", num_classes=3)
-    recall_metric = Recall(task="multiclass", num_classes=3)
-    auroc_metric = AUROC(task="multiclass", num_classes=3)
+    accuracy_metric = Accuracy(task="multiclass", num_classes=Config.num_classes)
+    precision_metric = Precision(task="multiclass", num_classes=Config.num_classes)
+    recall_metric = Recall(task="multiclass", num_classes=Config.num_classes)
+    auroc_metric = AUROC(task="multiclass", num_classes=Config.num_classes)
 
     pbar = tqdm(enumerate(dataloader), total=len(dataloader), desc=f"(train) ")
     for step, batch in pbar:
@@ -72,10 +72,10 @@ def validate_one_epoch(model: nn.Module, dataloader: DataLoader) -> float:
     running_loss = 0
 
     criterion = nn.CrossEntropyLoss()
-    accuracy_metric = Accuracy(task="multiclass", num_classes=3)
-    precision_metric = Precision(task="multiclass", num_classes=3)
-    recall_metric = Recall(task="multiclass", num_classes=3)
-    auroc_metric = AUROC(task="multiclass", num_classes=3)
+    accuracy_metric = Accuracy(task="multiclass", num_classes=Config.num_classes)
+    precision_metric = Precision(task="multiclass", num_classes=Config.num_classes)
+    recall_metric = Recall(task="multiclass", num_classes=Config.num_classes)
+    auroc_metric = AUROC(task="multiclass", num_classes=Config.num_classes)
 
     pbar = tqdm(enumerate(dataloader), total=len(dataloader), desc=f"(valid) ")
     for step, batch in pbar:
