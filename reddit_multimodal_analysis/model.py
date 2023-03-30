@@ -41,7 +41,7 @@ class MemotionModel(nn.Module):
         self.dropout = nn.Dropout(p=0.2)
 
     def forward(
-        self, image: torch.Tensor, input_ids: torch.Tensor, attention_mask: torch.Tensor, labels: Optional[torch.Tensor] = None,
+        self, image: torch.Tensor, input_ids: torch.Tensor, attention_mask: torch.Tensor, label: Optional[torch.Tensor] = None,
     ) -> torch.Tensor:
         img_out = self.image_encoder.forward(image)
         txt_out = self.text_encoder.forward(
