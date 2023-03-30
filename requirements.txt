@@ -1,0 +1,10 @@
+torch
+transformers
+sentence_transformers
+huggingface_cli
+numpy
+pandas
+matplotlib
+python-opencv
+python-dotenv
+
