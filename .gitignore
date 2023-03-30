@@ -162,3 +162,4 @@ cython_debug/
 data/
 memotion_dataset_7k/
 .vscode/
+.DS_Store

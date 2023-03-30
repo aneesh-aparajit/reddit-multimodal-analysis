@@ -7,4 +7,3 @@ pandas
 matplotlib
 python-opencv
 python-dotenv
-

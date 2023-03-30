@@ -1,8 +1,9 @@
+from typing import Optional
+
 import torch
 import torch.nn as nn
-from transformers import AutoModel
-
 from config import Config
+from transformers import AutoModel
 
 
 class ImageEncoder(nn.Module):
@@ -40,7 +41,7 @@ class MemotionModel(nn.Module):
         self.dropout = nn.Dropout(p=0.2)
 
     def forward(
-        self, image: torch.Tensor, input_ids: torch.Tensor, attention_mask: torch.Tensor
+        self, image: torch.Tensor, input_ids: torch.Tensor, attention_mask: torch.Tensor, labels: Optional[torch.Tensor] = None,
     ) -> torch.Tensor:
         img_out = self.image_encoder.forward(image)
         txt_out = self.text_encoder.forward(
@@ -54,9 +55,8 @@ class MemotionModel(nn.Module):
 
 if __name__ == "__main__":
     import pandas as pd
-    from torch.utils.data import DataLoader
-
     from dataset import MemotionDataset
+    from torch.utils.data import DataLoader
 
     dataset = MemotionDataset(df=pd.read_csv("../memotion_dataset_7k/folds.csv"))
     dataloader = DataLoader(dataset=dataset, batch_size=Config.train_bs, shuffle=True)

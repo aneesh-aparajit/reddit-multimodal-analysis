@@ -1,0 +1,32 @@
+[metadata]
+project = 'multimodal-sentiment-classification'
+version = '0.0.1'
+github = 'https://github.com/aneesh-aparajit/reddit-multimodal-analysis'
+
+[hyperparameters]
+exp_name      = 'vit+sbert'
+sbert_model   = 'sentence-transformers/all-mpnet-base-v2'
+vit_model     = 'google/vit-base-patch16-224'
+train_bs      = 24
+valid_bs      = 48
+img_size      = [224, 224]
+max_len       = 128
+epochs        = 50
+lr            = 5e-3
+scheduler     = 'CosineAnnealingLR'
+min_lr        = 1e-6
+T_0           = 25
+warmup_epochs = 0
+weight_decay  = 1e-6
+n_fold        = 5
+num_classes   = 3
+
+[dependencies]
+torch = '2.0.0'
+transformers = '4.26.0'
+sentence_transformers = '2.2.0'
+numpy = '1.23.5'
+pandas = '1.5.3'
+matplotlib = '3.6.3'
+python-opencv = '4.7.0'
+python-dotenv = '1.0.0'
