@@ -7,4 +7,4 @@ This project aims to try to find correlation and similarities between two differ
 
 ### Preview
 
-![memes](./resources/meme-preview.png)
+![memes](./resources/memes-preview.png)
