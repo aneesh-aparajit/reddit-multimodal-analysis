@@ -48,7 +48,8 @@ class MemotionDataset(Dataset):
         return  {
             'image': img, 
             'input_ids': out['input_ids'].squeeze(),
-            'attention_mask': out['attention_mask'].squeeze()
+            'attention_mask': out['attention_mask'].squeeze(),
+            'label': torch.LongTensor([row['label']]).squeeze()
         }
 
 
