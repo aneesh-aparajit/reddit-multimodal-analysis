@@ -165,3 +165,4 @@ memotion_dataset_7k/
 .DS_Store
 artifacts/
 .VSCodeCounter
+wandb/
