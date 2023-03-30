@@ -77,7 +77,7 @@ def validate_one_epoch(model: nn.Module, dataloader: DataLoader) -> float:
     recall_metric = Recall(task="multiclass", num_classes=3)
     auroc_metric = AUROC(task="multiclass", num_classes=3)
 
-    pbar = tqdm(enumerate(dataloader), total=len(dataloader), desc=f"(train) ")
+    pbar = tqdm(enumerate(dataloader), total=len(dataloader), desc=f"(valid) ")
     for step, batch in pbar:
         labels = batch["label"]
         yHat = model.forward(**batch)
