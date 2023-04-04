@@ -5,8 +5,15 @@ github = 'https://github.com/aneesh-aparajit/reddit-multimodal-analysis'
 
 [hyperparameters]
 exp_name      = 'vit+sbert'
-sbert_model   = 'sentence-transformers/all-mpnet-base-v2'
-vit_model     = 'google/vit-base-patch16-224'
+sbert_model   = [
+    'sentence-transformers/all-mpnet-base-v2', 
+    'sentence-transformers/all-MiniLM-L6-v2', 
+    'microsoft/deberta-v3-base'
+]
+vit_model     = [
+    'google/vit-base-patch16-224', 
+    'microsoft/beit-base-patch16-224-pt22k-ft22k'
+]
 train_bs      = 24
 valid_bs      = 48
 img_size      = [224, 224]
